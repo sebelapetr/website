@@ -1,0 +1,20 @@
+id: 'ID'
+edit: 'Edit'
+delete: 'Delete'
+moduls: 'Moduls'
+detail: 'Detail'
+flash: 'Notification'
+notAllowed: 'You dont have permissions'
+logoutSuccess: 'Logout success'
+userDeactivated: 'User was deactivated'
+actionNotFound: 'Action %action% for module %name% not found'
+permissionNotFound: 'Permission for module %name% not found'
+roleNotFound: 'Role not found'
+userNotFound: 'User not found'
+logout: 'Logout'
+cancel: 'Cancel'
+confirmLogout: 'Confirm logout.'
+home: "Home"
+assign: "Assign"
+
+tempCurrency: "Kč"

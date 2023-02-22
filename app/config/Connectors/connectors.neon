@@ -1,0 +1,2 @@
+services:
+    - App\Model\Services\Connectors\TestConnector(%connectors.test.username%, %connectors.test.password%)

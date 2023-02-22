@@ -1,0 +1,11 @@
+rights:
+    title: 'Rights'
+    read: 'Show section rights'
+
+dashboard:
+    title: 'Dashboard'
+    read: 'Show section dashboard'
+
+users:
+    title: 'Users'
+    read: 'Show section users'

@@ -1,0 +1,49 @@
+<nav class="page-controls navbar navbar-dashboard">
+
+    <div class="container-fluid">
+        <!-- .navbar-header contains links seen on xs & sm screens -->
+        <div class="navbar-header mr-md-3">
+            <ul class="nav navbar-nav navbar-right d-md-none">
+                <li class="nav-item d-none d-xl-block">
+                    <!-- toggles chat -->
+                    <a class="nav-link" href="#" data-toggle="chat-sidebar">
+                        <span class="square square-lg"><i class="la la-globe"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- this part is hidden for xs screens -->
+        <div class="navbar-header mobile-hidden">
+            <ul class="nav navbar-nav float-right">
+                <li class="dropdown nav-item">
+                    <a
+                            href="#"
+                            role="button"
+                            class="dropdown-toggle-notifications nav-link small"
+                            id="notifications-dropdown-toggle"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-position="bottom-middle-aligned"
+                            data-disable-interaction="false"
+                    >
+                        &nbsp;
+                        {$user->user->name} {$user->user->surname} - {_'roles.'.$user->user->role->intName}
+                    </a>
+                </li>
+                <li class="nav-item divider d-none d-xl-block"></li>
+                <li class="nav-item d-none d-xl-block">
+                    <a target="_self" n:href="logout!" class="nav-link">
+                        <i class="la la-power-off px-2"></i>
+                    </a>
+                </li>
+                <li class="nav-item d-md-none">
+                    <a target="_self" class="nav-link" data-toggle="collapse" href="#sidebar" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="la la-navicon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

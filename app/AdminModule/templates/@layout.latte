@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    {include "_layout/head.latte"}
+    {include "_layout/head-scripts.latte"}
+</head>
+<body class="">
+
+    {include "_layout/navbar.latte"}
+
+    {snippetArea flashesArea}
+        <div style="position: absolute; top: 100px; right: 0;z-index: 1000">
+            {foreach $flashes as $flashMessage}
+                {include '_layout/flashMessage.latte', flashMessage => $flashMessage}
+            {/foreach}
+        </div>
+    {/snippetArea}
+
+    {control menuComponent}
+
+    <div class="content-wrap">
+        <main id="content" class="content" role="main">
+            {include #content}
+        </main>
+        {include "_layout/footer.latte"}
+    </div>
+
+    <div class="loader-wrap hiding hide">
+        <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+    </div>
+
+
+    {include '_layout/footer-scripts.latte'}
+      {ifset #js}
+        {include #js}
+    {/ifset}
+
+    <script>
+        $('.toast').toast('show')
+    </script>
+
+</body>
+</html>

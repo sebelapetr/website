@@ -1,0 +1,45 @@
+<form role="form" n:name="form">
+    <div class="alert alert-danger alert-sm mb-3" n:foreach="$form->getErrors() as $error">
+        {_$error}
+    </div>
+    <fieldset>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="search-input" n:name="email" />
+                    <div class="input-group">
+                        <input n:name="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="search-input" n:name="name" />
+                    <div class="input-group">
+                        <input n:name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="search-input" n:name="surname" />
+                    <div class="input-group">
+                        <input n:name="surname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="search-input" n:name="phoneNumber" />
+                    <div class="input-group">
+                        <input n:name="phoneNumber" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="search-input" n:name="role" />
+                    <div class="input-group">
+                        <select class="selectpicker" data-style="btn-default" data-width="auto" tabindex="-1" n:name="role"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-actions">
+        <input type="submit" class="btn btn-inverse mr-3" n:name="send" />
+        <a href="{plink default}" type="button" class="btn btn-default">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,232 @@
+{varType App\Model\Order $item}
+{block content}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">{_common.home}</li>
+    <li class="breadcrumb-item active"><a n:href="default">{_app.orders.title}</a></li>
+    <li class="breadcrumb-item active">{_app.orders.detail, ['number' => $item->number]}</li>
+</ol>
+<h1 class="page-title">{_app.orders.detail, ['number' => $item->number]}</h1>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <section class="widget">
+            <header>
+                <h3>
+                    Information
+                </h3>
+            </header>
+            <div class="widget-body">
+                {var $shipping = $item->getShippingOrderItem()}
+                {var $payment = $item->getPaymentOrderItem()}
+                <span class="font-weight-bold">{_entity.order.sentAt}:</span> {$item->sentAt|date:'d.m.Y H:i'} <br>
+                <span class="font-weight-bold">{_entity.order.state}:</span> STATE TODO <br>
+                <span class="font-weight-bold">{_entity.order.market}:</span> {$item->market->name} <br>
+                <span class="font-weight-bold">{_entity.order.paymentType}:</span> {$payment ? $payment->name : ""} <br>
+                <span class="font-weight-bold">{_entity.order.deliveryType}:</span> {$shipping ? $shipping->name : ""} <br>
+                    <br>
+                <span class="font-weight-bold">{_entity.order.note}:</span> <br>
+                {$item->note}
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-5">
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.personalData}
+                </h3>
+            </header>
+            <div class="widget-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>{_entity.order.name}:</th>
+                            <td>{$item->name} {$item->surname}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.email}:</th>
+                            <td>{$item->email}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.phone}:</th>
+                            <td>{$item->telephone}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.billingAddress}:</th>
+                            <td>
+                                {$item->street}, {$item->city} {$item->zip}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.company}:</th>
+                            <td>{$item->company}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.ic}:</th>
+                            <td>{$item->ico}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.dic}:</th>
+                            <td>{$item->dic}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-7">
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.orderProcessWalkthrough}
+                </h3>
+            </header>
+            <div class="widget-body">
+               *TODO - StepByStep Order process walkthrough*
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-5">
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.deliveryData}
+                </h3>
+            </header>
+            <div class="widget-body">
+                <div class="table-responsive table-borderless">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>{_entity.order.deliveryName}:</th>
+                            <td>{$item->deliveryName} {$item->deliverySurname}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.deliveryCompany}:</th>
+                            <td>{$item->deliveryCompany}</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.deliveryAddress}:</th>
+                            <td>{$item->deliveryStreet}, {$item->deliveryCity} {$item->deliveryZip}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-7">
+
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.orderItems}
+                </h3>
+            </header>
+            <div class="widget-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">{_entity.orderItem.number}</th>
+                            <th scope="col">{_entity.orderItem.name}</th>
+                            <th scope="col">{_entity.orderItem.quantity}</th>
+                            <th scope="col">{_entity.orderItem.pricePieceVat}</th>
+                            <th scope="col">{_entity.orderItem.price}</th>
+                            <th scope="col">{_entity.orderItem.priceVat}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach $item->orderItems as $orderItem}
+                            <tr>
+                                <td class="font-weight-bold">{$orderItem->number}</td>
+                                <td>{$orderItem->name}</td>
+                                <td>{$orderItem->quantity} pc.</td>
+                                <td>{$orderItem->pricePieceVat|number:2, ",", " "} {_common.tempCurrency}</td>
+                                <td>{$orderItem->priceVat|number:2, ",", " "} {_common.tempCurrency}</td>
+                                <td>{$orderItem->price|number:2, ",", " "} {_common.tempCurrency}</td>
+                            </tr>
+                        {/foreach}
+                        <tr>
+                            <td class="font-weight-bold">{_app.orders.itemsTotal}:</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="font-weight-bold">{$item->totalPriceVat|number:2, ",", " "} {_common.tempCurrency}</td>
+                            <td class="font-weight-bold">{$item->totalPrice|number:2, ",", " "} {_common.tempCurrency}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-5">
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.supplierBillingData}
+                </h3>
+            </header>
+            <div class="widget-body">
+                * TODO - supplier data (on invoice) by market like NOVIKO.cz | Petr Šebela | IČO: 4566...)
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>{_entity.order.market}:</th>
+                            <td>Animalko.cz</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.name}:</th>
+                            <td>Petr Šebela</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.email}:</th>
+                            <td>info@animalko.cz</td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.billingAddress}:</th>
+                            <td>
+                                Na Větřáku 691, Jedovinice 67906
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{_entity.order.ic}:</th>
+                            <td>06254512</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-7">
+        <section class="widget">
+            <header>
+                <h3>
+                    {_app.orders.stateChanges}
+                </h3>
+            </header>
+            <div class="widget-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">{_entity.orderStateChange.state}</th>
+                            <th scope="col">{_entity.orderStateChange.createdAt}</th>
+                            <th scope="col">{_entity.orderStateChange.createdBy}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {foreach $item->orderStateChanges->toCollection()->orderBy("createdAt", "DESC") as $orderStateChange}
+                                <tr>
+                                    <td class="font-weight-bold">{_"entity.order.state".$orderStateChange->state}</td>
+                                    <td>{$orderStateChange->createdAt|date:"d. m. Y H:i"}</td>
+                                    <td>{$orderStateChange->createdBy ? $orderStateChange->createdBy->name : ""}</td>
+                                </tr>
+                            {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

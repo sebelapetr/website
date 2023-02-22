@@ -1,0 +1,41 @@
+<form n:name="form" class="login-form mt-lg">
+    <div class="alert alert-danger alert-sm mb-3" n:foreach="$form->getErrors() as $error">
+        {_$error}
+    </div>
+    <div role="group" class="form-group">
+        <label n:name="email" class="d-block">Email</label>
+        <div>
+            <div role="group" class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="la la-user text-white"></i>
+                    </div>
+                </div>
+                <input n:name="email" type="email" required="required" placeholder="Email" class="form-control input-transparent pl-3">
+            </div>
+        </div>
+    </div>
+    <div role="group" class="form-group">
+        <label n:name="password" class="d-block">Password</label>
+        <div>
+            <div role="group" class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="la la-lock text-white"></i>
+                    </div>
+                </div>
+                <input n:name="password" type="password" required="required" placeholder="Password" class="form-control input-transparent pl-3">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="btn-toolbar">
+            <input type="submit" class="btn btn-danger btn-block" n:name="login" value="Login">
+        </div>
+    </div>
+    <div class="group">
+        <div class="widget-login-info">
+            <a href="#todo">Reset password</a>
+        </div>
+    </div>
+</form>

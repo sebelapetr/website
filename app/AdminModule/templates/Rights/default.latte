@@ -1,0 +1,35 @@
+{block content}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">{_common.home}</li>
+    <li class="breadcrumb-item active">{_app.users.title}</li>
+    <li class="breadcrumb-item active">{_app.rights.title}</li>
+</ol>
+<h1 class="page-title">{_app.rights.title}</h1>
+
+<div class="row">
+    <div class="email-folders col-lg-3 col-xl-2">
+        <ul class="nav flex-column nav-pills nav-stacked nav-email-folders">
+
+            {foreach $roles as $roleEnt}
+                <li class="nav-item {if isset($role) && $roleEnt->id === $role->id}active{/if} mt">
+                    <a class="nav-link" n:href="this, $roleEnt->id">
+                        {_'roles.'.$roleEnt->intName}
+                    </a>
+                </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="col-lg-9 col-xl-10">
+        <section class="widget">
+            <div class="widget-body">
+                {if isset($role) && $role !== null}
+                    {control editRightsForm}
+                {else}
+                    <div class="alert alert-warning alert-transparent alert-sm">
+                        {_app.rights.chooseRole}
+                    </div>
+                {/if}
+            </div>
+        </section>
+    </div>
+</div>

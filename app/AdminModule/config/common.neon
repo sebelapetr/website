@@ -1,0 +1,12 @@
+services:
+    #SERVICES
+
+    #COMPONENTS
+    - App\AdminModule\Components\IMenuComponentFactory
+
+    #DATAGRIDS
+
+    #FORMS
+    - App\AdminModule\Forms\ILoginFormFactory
+    - App\AdminModule\Forms\IEditRightsFormFactory
+    - App\AdminModule\Forms\IUserFormFactory

@@ -1,0 +1,24 @@
+LoginForm:
+    email: 'Email'
+    password: 'Password'
+    login: 'Login'
+    success: 'Login success'
+    userNotFound: 'User not found'
+    userIsNotActive: 'User is not active'
+    badPassword: 'Bad password'
+    passwordNotSet: 'Password not set'
+
+UserForm:
+    email: 'Email'
+    name: 'Name'
+    surname: 'Surname'
+    phoneNumber: 'Phone number'
+    role: 'Role'
+    edit: 'Save user'
+    add: 'Add'
+    userEdited: 'User was eddited'
+    userAdded: 'User was added'
+
+EditRightsForm:
+    edit: 'Save rights'
+    success: 'Role was saved'

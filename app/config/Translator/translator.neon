@@ -1,0 +1,12 @@
+extensions:
+    translation: Contributte\Translation\DI\TranslationExtension
+
+
+translation:
+    locales:
+        whitelist: [en]
+        default: en
+        fallback: [en]
+    dirs:
+        - %appDir%/lang
+    debugger: true

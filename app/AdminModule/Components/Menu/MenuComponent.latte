@@ -1,0 +1,56 @@
+{varType App\AdminModule\Components\MenuComponent $control}
+{varType App\AdminModule\Presenters\BasePresenter $presenter}
+{varType array $menuItems}
+<nav id="sidebar" class="sidebar" role="navigation">
+	<!-- need this .js class to initiate slimscroll -->
+	<div class="js-sidebar-content">
+		<header class="logo d-none d-md-block">
+			<span class="fw-bold">Elvide</span>
+		</header>
+
+		<div n:foreach="$menuItems as $module => $items">
+			<h5 class="sidebar-nav-title">{_'modules.'.$module}</h5>
+			<ul class="sidebar-nav">
+				{foreach $items as $item}
+				{ifset $item['children']}
+					{var $allowed = false}
+					{foreach $item['children'] as $child}
+						{if $user->isAllowed(strtolower($child['presenterClean']), 'read')}
+							{var $allowed = true}
+						{/if}
+					{/foreach}
+					{var $isCurrent = $presenter->isLinkCurrentIn($control->getLinksRecursiveString($item))}
+
+					<li n:class="$isCurrent ? active, nav-item" n:if="$allowed">
+						<a class="collapsed" href="#collapse-{$item['presenterClean']}" data-toggle="collapse" data-parent="#sidebar">
+						<span class="icon">
+							<i class="{$item['icon']}"></i>
+						</span>
+							<span>{_'app.'.$item['presenterClean'].'.title'}</span>
+							<i class="toggle fa fa-angle-down fa-sm mt-4"></i>
+						</a>
+						<ul id="collapse-{$item['presenterClean']}" n:class="$isCurrent ? show, collapse">
+							<!-- data-no-pjax turns off pjax loading for this link. Use in case of complicated js loading on the
+                                 target page -->
+							{foreach $item['children'] as $child}
+								<li class="">
+									<a n:class="$presenter->isLinkCurrent($child['presenter'].':*') ? active, collapse-item" href="{plink $child['presenter'].':default'}" n:if="$user->isAllowed(strtolower($child['presenterClean']), 'read')">{_'app.'.$child['presenterClean'].'.title'}</a>
+								</li>
+							{/foreach}
+						</ul>
+					</li>
+				{else}
+					<li n:class="$presenter->isLinkCurrent($item['presenter'].':*') ? active, nav-item"  n:if="$user->isAllowed(strtolower($item['presenterClean']), 'read')">
+						<a href="{plink $item['presenter'].':default'}">
+						<span class="icon">
+							<i class="{$item['icon']}"></i>
+						</span>
+							{_'app.'.$item['presenterClean'].'.title'}
+						</a>
+					</li>
+				{/ifset}
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+</nav>

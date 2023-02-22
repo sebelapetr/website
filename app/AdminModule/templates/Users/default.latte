@@ -1,0 +1,71 @@
+{varType App\Model\Role $role}
+{varType Nextras\Orm\Collection\ICollection|App\Model\Role[] $roles}
+{varType Nextras\Orm\Collection\ICollection|App\Model\User[] $users}
+{block content}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">{_common.home}</li>
+    <li class="breadcrumb-item active">{_app.users.title}</li>
+    <li class="breadcrumb-item active">{_app.users.title}</li>
+</ol>
+<h1 class="page-title">{_app.users.title}</h1>
+
+<div class="row">
+    <div class="email-folders col-lg-3 col-xl-2">
+        <ul class="nav flex-column nav-pills nav-stacked nav-email-folders">
+            {foreach $roles as $roleEnt}
+                <li class="nav-item {if isset($role) && $roleEnt->id === $role->id}active{/if} mt">
+                    <a class="nav-link" n:href="this, $roleEnt->id">
+                        {_'roles.'.$roleEnt->intName}
+                    </a>
+                </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="col-lg-9 col-xl-10">
+        <section class="widget">
+            <div class="widget-body">
+                {if $users->countStored() > 0}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>{_app.users.name}</th>
+                                <th>{_app.users.email}</th>
+                                <th>{_app.users.phone}</th>
+                                <th>{_app.users.active}</th>
+                                <th>{_app.users.createdAt}</th>
+                                <th>{_app.users.lastLogin}</th>
+                                <th></th>
+                            </tr>
+                            {foreach $users as $userEnt}
+                                <tr>
+                                    <td>
+                                        <b>{$userEnt->name} {$userEnt->surname}</b>
+                                    </td>
+                                    <td>{$userEnt->email}</td>
+                                    <td>{$userEnt->phoneNumber}</td>
+                                    <td>{$userEnt->active ? "Yes" : "No"}</td>
+                                    <td>{$userEnt->createdAt|date:"d.m.Y H:i"}</td>
+                                    <td>{$userEnt->lastLogin|date:"d.m.Y H:i"}</td>
+                                    <td>
+                                        <a n:href="edit, $userEnt->id" class="btn btn-outline-info btn-rounded width-100 mr-2" role="button">
+                                            {_common.edit}
+                                        </a>
+                                        {if $userEnt->active}
+                                            <a n:href="toggleActive!, $userEnt->id" class="btn btn-outline-danger btn-square width-100 mr-2">{_app.users.deactivate}</a>
+                                        {else}
+                                            <a n:href="toggleActive!, $userEnt->id" class="btn btn-outline-success btn-rounded width-100 mr-2">{_app.users.activate}</a>
+                                        {/if}
+                                    </td>
+                                </tr>
+                            {/foreach}
+                        </table>
+                    </div>
+                {else}
+                    <div class="alert alert-warning alert-transparent alert-sm">
+                        {_app.users.notFoundInRole, [name => $role->intName]}
+                    </div>
+                {/if}
+            </div>
+        </section>
+    </div>
+</div>

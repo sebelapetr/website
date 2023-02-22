@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(252 252 252) !important;
+}
+.status-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+}
+.status-badge-on {
+    background: #00b900;
+}
+.status-badge-off {
+    background: #b90000;
+    background: linear-gradient(45deg, #ed8289, #c55151, #ff0000) !important;
+}
+
+.card {
+    border: none !important;
+    background-color: rgb(237 237 237) !important;
+
+    border-radius: 5px !important;
+}
+
+.badge-primary {
+    background-color: red !important;
+}
+
+h2 {
+    color: rgb(136 142 153) !important;
+}
+
+h3{
+    color: rgb(136 142 153) !important;
+}
+h5{
+    color: rgb(66 78 84) !important;
+}
+
+.skill-rating {
+    width: 13px;
+    height: 13px;
+    background-color: rgb(191 191 191);
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.skill-rating-on {
+    background-color: #7157c1;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ed8289, #b28ac7, #7157c1) !important;
+    border: 2px solid black !important;
+    box-shadow: -1px 2px 1px 1px black !important;
+    border-radius: 4px !important;
+    color: white !important;
+}
+
+.badge {
+    background-color: #7157c1 !important;
+    background: linear-gradient(45deg, #ed8289, #b28ac7, #7157c1) !important;
+    font-size: 0.8rem !important;
+    border-radius: 3px !important;
+    padding: 10px !important;
+}

@@ -1,0 +1,7 @@
+/.git/
+/.idea/*
+/vendor/
+/log/
+/temp/
+/app/config/local.neon
+/www/node_modules/

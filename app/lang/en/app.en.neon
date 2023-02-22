@@ -1,0 +1,39 @@
+# Author: Petr Šebela
+# Date: 22. 9. 2020
+# Time: 00:39
+
+title: 'Petr Sebela - Web developer | Programmer'
+name: 'Petr Sebela - Web developer | Programmer'
+
+dashboard:
+    title: 'Dashboard'
+
+users:
+    title: 'Users'
+    role: 'Role'
+    list: 'Users list'
+    detail: 'User detail %name%'
+    basicInformations: 'Information'
+    usersList: 'Users list'
+    edit: 'Edit user %name%'
+    add: 'Add user'
+    name: 'Name'
+    email: 'Email'
+    notFoundInRole: "In role %name% doesn't exists any user"
+    active: 'Active'
+    activeYes: 'Yes'
+    activeNo: 'No'
+    phone: 'Phone number'
+    lastLogin: 'Last login'
+    createdAt: 'Created at'
+    deactivate: 'Deactivate'
+    activate: 'Activate'
+
+rights:
+    title: 'Rights'
+    role: 'Role'
+    edit: 'Edit right of role %name%'
+    chooseRole: 'Choose role for edit permissions.'
+
+authentication:
+    title: 'Login'

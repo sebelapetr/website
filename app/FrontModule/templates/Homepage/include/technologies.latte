@@ -1,0 +1,239 @@
+<div class="row mt-10">
+    <h2>TECHNOLOGIES I USE</h2>
+    {var $technologies = [
+        "Development" => [
+            [
+                "name" => "PHP",
+                "skill" => 4,
+                "icon" => "icons8-php-logo-100.svg"
+            ],
+            [
+                "name" => "Nette",
+                "skill" => 3,
+                "icon" => "nette-logo.svg",
+            ],
+            [
+                "name" => "MySQL",
+                "skill" => 3,
+                "icon" => "icons8-mysql-logo.svg",
+            ],
+            [
+                "name" => "Nextras ORM",
+                "skill" => 3,
+                "icon" => "nextrasorm.jpg",
+            ],
+            [
+                "name" => "REST API",
+                "skill" => 3,
+                "icon" => "rest-api-icon.svg",
+            ],
+            [
+                "name" => "HTML 5",
+                "skill" => 3,
+                "icon" => "icons8-html-5.svg"
+            ],
+            [
+                "name" => "CSS",
+                "skill" => 3,
+                "icon" => "icons8-css3.svg"
+            ],
+            [
+                "name" => "Javascript",
+                "skill" => 3,
+                "icon" => "icons8-javascript.svg"
+            ],
+            [
+                "name" => "jQuery",
+                "skill" => 3,
+                "icon" => "icons8-jquery.svg",
+            ],
+            [
+                "name" => "Bootstrap",
+                "skill" => 3,
+                "icon" => "icons8-bootstrap.svg",
+            ],
+            [
+                "name" => "mPDF",
+                "skill" => 3,
+                "icon" => "mpdf.png"
+            ],
+            [
+                "name" => "PhpSpreadsheet",
+                "skill" => 3,
+                "icon" => "phpspreadsheet.png",
+            ],
+        ],
+        "Development (I also worked with)" => [
+            [
+                "name" => "Vue.js",
+                "skill" => 3,
+                "icon" => "icons8-vue-js.svg"
+            ],
+            [
+                "name" => "Tailwind",
+                "skill" => 3,
+                "icon" => "tailwind.png"
+            ],
+            [
+                "name" => "Elasticsearch",
+                "skill" => 3,
+                "icon" => "elasticsearch.svg",
+            ],
+            [
+                "name" => "Kibana",
+                "skill" => 3,
+                "icon" => "icons8-kibana.svg",
+            ],
+            [
+                "name" => "Redis",
+                "skill" => 3,
+                "icon" => "icons8-redis.svg",
+            ],
+            [
+                "name" => "Doctrine",
+                "skill" => 3,
+                "icon" => "doctrine.svg",
+            ],
+            [
+                "name" => "PostgreSQL",
+                "skill" => 3,
+                "icon" => "icons8-postgresql.svg",
+            ],
+            [
+                "name" => "GraphQL",
+                "skill" => 3,
+                "icon" => "icons8-graphql.svg",
+            ],
+            [
+                "name" => "Twig",
+                "skill" => 3,
+                "icon" => "twig-logo.png",
+            ],
+            [
+                "name" => "Sass",
+                "skill" => 3,
+                "icon" => "sass.png",
+            ],
+            [
+                "name" => "AWS",
+                "skill" => 3,
+                "icon" => "icons8-amazon-web-services.svg",
+            ],
+        ],
+        "Apps" => [
+            [
+                "name" => "PhpStorm",
+                "skill" => 3,
+                "icon" => "phpstorm.png",
+            ],
+            [
+                "name" => "Postman",
+                "skill" => 3,
+                "icon" => "postman.svg",
+            ],
+            [
+                "name" => "SwaggerHUB",
+                "skill" => 3,
+                "icon" => "swaggerhub.svg",
+            ],
+            [
+                "name" => "Sourcetree",
+                "skill" => 3,
+                "icon" => "icons8-sourcetree.svg",
+            ],
+            [
+                "name" => "GitKraken",
+                "skill" => 3,
+                "icon" => "icons8-gitkraken.svg",
+            ],
+            [
+                "name" => "Photoshop",
+                "skill" => 3,
+                "icon" => "icons8-adobe-photoshop.svg",
+            ],
+            [
+                "name" => "Notion",
+                "skill" => 3,
+                "icon" => "icons8-notion.svg",
+            ],
+            [
+                "name" => "draw.io",
+                "skill" => 3,
+                "icon" => "drawio.png",
+            ],
+            [
+                "name" => "Slack",
+                "skill" => 3,
+                "icon" => "slack.png",
+            ],
+            [
+                "name" => "Blender",
+                "skill" => 3,
+                "icon" => "icons8-blender-3d.svg",
+            ],
+        ],
+        "Services" => [
+            [
+                "name" => "GitHub",
+                "skill" => 3,
+                "icon" => "icons8-github-100.svg",
+            ],
+            [
+                "name" => "Bitbucket",
+                "skill" => 3,
+                "icon" => "bitbucket.png",
+            ],
+            [
+                "name" => "GitLab",
+                "skill" => 3,
+                "icon" => "icons8-gitlab.svg",
+            ],
+            [
+                "name" => "Composer",
+                "skill" => 3,
+                "icon" => "composer.png",
+            ],
+            [
+                "name" => "NPM",
+                "skill" => 3,
+                "icon" => "npm.png",
+            ],
+            [
+                "name" => "Yarn",
+                "skill" => 3,
+                "icon" => "yarn.png",
+            ],
+            [
+                "name" => "Ubuntu",
+                "skill" => 3,
+                "icon" => "ubuntu.png",
+            ],
+            [
+                "name" => "Clockify",
+                "skill" => 3,
+                "icon" => "clockify-icon.svg",
+            ]
+        ]
+    ]}
+    {foreach $technologies as $field => $technologies}
+    <h3 class="mt-4">{$field}</h3>
+    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 my-2 px-2" n:foreach="$technologies as $technology">
+        <div class="card">
+            <div class="row mx-3 my-2">
+                <div class="col-3 text-center d-flex align-middle justify-content-center align-items-center">
+                    <img src="{$basePath}/img/technologies/{$technology["icon"]}" alt="{$technology["name"]} Technology" width="50" style="height: 50px;object-fit: contain">
+                </div>
+                <div class="col-9 text-left d-flex align-middle justify-content-center align-items-center">
+                    <div class="card-body p-0">
+                        <span class="card-title my-0">{$technology["name"]}</span>
+                        {*for $i = 1; $i <= 5; $i++}
+                            <span class="skill-rating {if $technology["skill"] >= $i}skill-rating-on{/if}"></span>
+                        {/for*}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+    <p class="mt-5" style="color: rgb(150,150,150)">I'm using free svg icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+</div>

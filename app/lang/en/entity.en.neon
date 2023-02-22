@@ -1,0 +1,5 @@
+user:
+    name: 'Name'
+    surname: 'Surname'
+    phoneNumber: 'Phone'
+    email: 'Email'
