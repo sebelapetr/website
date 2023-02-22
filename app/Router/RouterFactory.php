@@ -21,6 +21,8 @@ final class RouterFactory
         $routerAdmin[] = new Route('admin/<presenter>/<action>[/<id>]', 'Authentication:default');
 
         $router[] = $routerFront = new RouteList("Front");
+        $routerFront->addRoute('projects', 'Homepage:archive');
+        $routerFront->addRoute('blog', 'Homepage:blog');
         $routerFront->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
 
 		return $router;

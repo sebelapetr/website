@@ -1,15 +1,23 @@
 <div class="row mt-10 mt-5">
-    <div class="col-sm-3 order-sm-last">
+    <div class="col-sm-3 order-sm-last text-left">
         {*<img src="https://eggsy.xyz/_nuxt/image/129046.webp" height="200">*}
-        <img src="{$basePath}/img/main_photo.png" style="border-radius: 5px" height="200">
+        <img src="{$basePath}/img/main_photo.png" style="border-radius: 5px;width: 100%;height: auto" class="mb-3">
     </div>
     <div class="col-sm-9 order-sm-first">
-
-        <h1>Petr Sebela</h1>
+        <h1>Hi 👋, <br> I'm Petr Sebela</h1>
         <h2>Web developer | Programmer</h2>
         <p class="fs-5 col-md-10">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
 
-        <div class="mb-3">
+        <div class="print-show contact-list">
+            <ul class="list-unstyled">
+                <li><i class="fa-solid fa-phone"></i> +420 605 200 686</li>
+                <li><i class="fa-regular fa-envelope"></i> mail@sebelapetr.cz</li>
+                <li><i class="fa-solid fa-location-dot"></i> Brno</li>
+                <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/sebelapetr</li>
+            </ul>
+        </div>
+
+        <div class="mb-3 print-hide">
             <div class="ring-container">
                 <div class="ringring ringring-off"></div>
                 <div class="circle circle-off"></div>
@@ -18,7 +26,9 @@
         </div>
 
         <div class="mb-2">
-            <a href="#get-in-touch" class="btn btn-primary btn-lg px-4">Get in touch</a>
+            <a href="#get-in-touch" class="btn btn-primary btn-lg px-4 print-hide">🤙 Get in touch</a>
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-lg px-4 print-hide mx-2" onclick="print()">🖨️ Print</a>
         </div>
     </div>
 </div>
+<div class="pagebreak"></div>

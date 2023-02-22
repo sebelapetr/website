@@ -1,6 +1,10 @@
+@font-face { font-family: Quicksand;
+    src: url('/module/front/webfonts/Quicksand-VariableFont_wght.ttf'); }
 body {
     background-color: rgb(252 252 252) !important;
+    font-family: "Quicksand", sans-serif;
 }
+
 .status-badge {
     width: 20px;
     height: 20px;
@@ -18,25 +22,30 @@ body {
 }
 
 .card {
-    border: none !important;
     background-color: rgb(237 237 237) !important;
-
+    border: 2px dashed #d7d7d7 !important;
     border-radius: 5px !important;
 }
 
 .badge-primary {
     background-color: red !important;
 }
+h1 {
 
+    font-weight: 700 !important;
+}
 h2 {
     color: rgb(136 142 153) !important;
+    font-weight: 700 !important;
 }
 
 h3{
     color: rgb(136 142 153) !important;
+    font-weight: 700 !important;
 }
 h5{
     color: rgb(66 78 84) !important;
+    font-weight: 700 !important;
 }
 
 .skill-rating {
@@ -51,18 +60,80 @@ h5{
     background-color: #7157c1;
 }
 
+.contact-list {
+    font-size: 1.1rem;
+}
+.contact-list svg {
+    margin-right: 10px;
+}
+.contact-list li {
+    margin-bottom: 5px;
+}
+
 .btn-primary {
     background: linear-gradient(45deg, #ed8289, #b28ac7, #7157c1) !important;
     border: 2px solid black !important;
     box-shadow: -1px 2px 1px 1px black !important;
     border-radius: 4px !important;
     color: white !important;
+    font-weight: 700 !important;
+}
+.btn-outline-primary {
+    border: 2px dashed #0d6efd !important;
+}
+.btn {
+
+    font-weight: 700 !important;
 }
 
 .badge {
-    background-color: #7157c1 !important;
-    background: linear-gradient(45deg, #ed8289, #b28ac7, #7157c1) !important;
     font-size: 0.8rem !important;
-    border-radius: 3px !important;
     padding: 10px !important;
+    font-size: 0.9rem !important;
+
+    background: linear-gradient(45deg, #ed8289, #b28ac7, #7157c1) !important;
+    border: 2px solid black !important;
+    box-shadow: -1px 2px 1px 0px black !important;
+    border-radius: 4px !important;
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.btn-outline-gray {
+    border: 2px dashed #000000 !important;
+    border-radius: 5px !important;
+}
+
+
+.print-show {
+    display: none;
+    visibility: hidden;
+}
+
+@media print {
+    .badge {
+        color: black !important;
+    }
+    .print-hide {
+        display: none;
+        visibility: hidden;
+    }
+    .print-show {
+        display: initial;
+        visibility: visible;
+    }
+    .pagebreak {
+        page-break-before: always;
+    }
+    .badge {
+        background-color: #7157c1 !important;
+    }
+
+}
+
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
 }

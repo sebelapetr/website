@@ -1,5 +1,18 @@
-<header class="d-flex align-items-center pb-3 mb-5">
-    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+<header>
+    <div class="d-flex flex-wrap justify-content-start pb-3 mb-5 position-relative">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="{$basePath}/img/logo.png" width="60">
     </a>
+
+    <a href="#menu" id="toggle" class="pull-right position-absolute" style="right: 0;top: 20px"><span></span></a>
+        <div id="menu" class="m-0" style="right: 40px">
+            <ul>
+                <li><a n:href="default">Home</a></li>
+                <li><a n:href="blog">Blog</a></li>
+                <li><a n:href="archive">Projects</a></li>
+                <li><a n:href="default#timeline">Timeline</a></li>
+                <li><a n:href="default#get-in-touch">Contact</a></li>
+            </ul>
+        </div>
+</div>
 </header>
