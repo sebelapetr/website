@@ -1,34 +1,62 @@
 <div class="row mt-10 mt-5">
     <div class="col-sm-3 order-sm-last text-left">
         {*<img src="https://eggsy.xyz/_nuxt/image/129046.webp" height="200">*}
-        <img src="{$basePath}/img/main_photo.png" style="border-radius: 5px;width: 100%;height: auto" class="mb-3">
+        <img id="main-photo" src="{$basePath}/img/main_photo.png" style="border-radius: 5px;width: 100%;height: auto" class="mb-3">
     </div>
     <div class="col-sm-9 order-sm-first">
         <h1>Hi 👋, <br> I'm Petr Sebela</h1>
         <h2>Web developer | Programmer</h2>
-        <p class="fs-5 col-md-10">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
-
-        <div class="print-show contact-list">
-            <ul class="list-unstyled">
-                <li><i class="fa-solid fa-phone"></i> +420 605 200 686</li>
-                <li><i class="fa-regular fa-envelope"></i> mail@sebelapetr.cz</li>
-                <li><i class="fa-solid fa-location-dot"></i> Brno</li>
-                <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/sebelapetr</li>
-            </ul>
-        </div>
-
-        <div class="mb-3 print-hide">
+        <p class="fs-5 col-md-10" style="font-weight: 500">I'm living in Brno in Czech Republic. I build complex web apps and ecommerce websites using primary PHP <a href="https://nette.org/en/" target="_blank">Framework Nette <i class="fa-solid fa-arrow-up-right-from-square fa-sm print-hide"></i></a>. <br><a href="#technologies" class="print-hide">Check my tech stack <i class="fa-solid fa-arrow-down  fa-sm print-hide"></i></a> </p>
+        <p class="fs-5 col-md-10" style="font-weight: 500">I also started learning <a href="https://vuestorefront.io/composable-commerce" target="_blank">Composable ecommerce <i class="fa-solid fa-arrow-up-right-from-square fa-sm print-hide"></i></a> using <a href="https://www.storefrontx.io/" target="_blank">Storefront X <i class="print-hide fa-solid fa-arrow-up-right-from-square fa-sm"></i></a> as headless PWA written in Vue.js Framework.</p>
+        <div class="mb-2 print-hide">
             <div class="ring-container">
                 <div class="ringring ringring-off"></div>
                 <div class="circle circle-off"></div>
-                <span class="ring-text">Full capacity</span>
+                <span class="ring-text">Full capacity right now</span>
             </div>
         </div>
 
         <div class="mb-2">
             <a href="#get-in-touch" class="btn btn-primary btn-lg px-4 print-hide">🤙 Get in touch</a>
-            <a href="javascript:void(0)" class="btn btn-outline-primary btn-lg px-4 print-hide mx-2" onclick="print()">🖨️ Print</a>
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-lg px-5 px-md-4 print-hide mx-0 mx-md-2 my-3 mx-md-0" onclick="print()">🖨️ Print</a>
         </div>
     </div>
 </div>
-<div class="pagebreak"></div>
+
+<div class="row mt-10 print-show" id="get-in-touch">
+    <h2>GET IN TOUCH</h2>
+    <div class="col-sm-12 col-md-6 col-xl-6 my-2 px-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <h3 class="card-title text-black">✉️ Email</h3>
+                        <p class="card-text">Contact me by email!</p>
+                        <a href="mailto:mail@sebelapetr.cz" class="print-show">mail@sebelapetr.cz</a>
+                        <a href="mailto:mail@sebelapetr.cz" class="btn btn-primary stretched-link print-hide">Send me mail</a>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-at fa-4x" style="color:rgb(200,200,200)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-6 my-2 px-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <h3 class="card-title text-black">💼 LinkedIn</h3>
+                        <p class="card-text">Connect with me on LinkedIn!</p>
+                        <a href="https://www.linkedin.com/in/sebelapetr" class="print-show">linkedin.com/in/sebelapetr</a>
+                        <a href="https://www.linkedin.com/in/sebelapetr" target="_blank" class="btn btn-primary stretched-link print-hide">Open my LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-brands fa-linkedin fa-4x" style="color:rgb(200,200,200)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
