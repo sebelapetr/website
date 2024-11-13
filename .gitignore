@@ -1,7 +1,13 @@
+# GIT
 /.git/
+# PHPSTORM
 /.idea/*
+# VENDOR
 /vendor/
+# logs and cache files
 /log/
 /temp/
+# config
 /app/config/local.neon
+# NODE MODULES
 /www/node_modules/
